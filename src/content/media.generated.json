@@ -1,0 +1,37 @@
+{
+  "photos": {
+    "/media/photo/eps-8463.jpg": {
+      "w": 1705,
+      "h": 2400
+    },
+    "/media/photo/eps-8486.jpg": {
+      "w": 1892,
+      "h": 2400
+    },
+    "/media/photo/eps-8419.jpg": {
+      "w": 1600,
+      "h": 2400
+    },
+    "/media/photo/birthday-2437.jpg": {
+      "w": 1679,
+      "h": 2400
+    },
+    "/media/photo/birthday-2280.jpg": {
+      "w": 1734,
+      "h": 2400
+    },
+    "/media/photo/birthday-2486.jpg": {
+      "w": 1906,
+      "h": 2400
+    },
+    "/media/photo/birthday-2296.jpg": {
+      "w": 1791,
+      "h": 2400
+    },
+    "/media/photo/nature-2986.jpg": {
+      "w": 1080,
+      "h": 1616
+    }
+  },
+  "films": {}
+}
