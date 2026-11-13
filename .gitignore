@@ -10,3 +10,6 @@ originals/
 media-src/
 .next-*
 *.tgz
+
+.idea
+.idea/

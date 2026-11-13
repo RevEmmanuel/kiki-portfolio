@@ -2,7 +2,7 @@
 
 import Image from "next/image";
 import Link from "next/link";
-import { motion, useMotionTemplate, useReducedMotion, useScroll, useSpring, useTransform } from "motion/react";
+import { motion, useMotionTemplate, useMotionValueEvent, useReducedMotion, useScroll, useSpring, useTransform } from "motion/react";
 import { useEffect, useRef, useState } from "react";
 import { bySlug, identity } from "@/content/projects";
 import { Section } from "../Backdrop";
@@ -65,6 +65,12 @@ export function Hero() {
   const captionY = useTransform(p, [0.65, 1], [40, 0]);
   const shade = useTransform(p, [0.4, 1], [0, 0.45]);
 
+  // load frame-sized images first; ask for full-screen sizes only once the frame has opened up
+  const [full, setFull] = useState(false);
+  useMotionValueEvent(p, "change", (v) => {
+    if (v > 0.5 && !full) setFull(true);
+  });
+
   const current = frames[i];
 
   return (
@@ -108,7 +114,7 @@ export function Hero() {
                 alt={k === i ? f.alt : ""}
                 fill
                 priority={k < 2}
-                sizes="100vw"
+                sizes={full ? "100vw" : "(min-width: 768px) 30vw, 70vw"}
                 className="object-cover transition-[opacity,transform] duration-[900ms] ease-[var(--ease)]"
                 style={{ opacity: k === i ? 1 : 0, transform: k === i ? "scale(1)" : "scale(1.06)" }}
               />

@@ -10,7 +10,7 @@ const nextConfig: NextConfig = {
     minimumCacheTTL: 60 * 60 * 24 * 30,
   },
   // the OG renderer reads its fonts from /assets at request time
-  outputFileTracingIncludes: { "/**/opengraph-image": ["./assets/**/*"] },
+  outputFileTracingIncludes: { "/**/opengraph-image": ["./assets/**/*"], "/icon": ["./assets/**/*"], "/apple-icon": ["./assets/**/*"] },
   async redirects() {
     return [{ source: "/photographs", destination: "/work?f=photography", permanent: true }];
   },
